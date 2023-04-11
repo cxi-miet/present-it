@@ -25,7 +25,7 @@ ul {
 }
 .btn {
   padding: 0.5rem 1rem;
-  color: white;
+  color: white !important;
   text-decoration: none;
   background: var(--pink);
   border-radius: 5px;
@@ -34,7 +34,7 @@ ul {
 }
 .btn:hover {
   background: white;
-  color: var(--pink);
+  color: var(--pink) !important;
 }
 .btn-yellow {
   background: var(--yellow);
@@ -45,6 +45,9 @@ ul {
 }
 .hide-sm {
   display: none;
+}
+.hide-lg{
+  display: block;
 }
 .section {
   padding: 0 1rem;
@@ -77,30 +80,39 @@ ul {
   left: 0;
 }
 .primary-nav {
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-.logo {
+.logo{
   color: white;
   font-size: 2rem;
   font-weight: 700;
+  text-decoration: none;
 }
 .secondary-nav {
   width: 100%;
-  position: absolute;
+  height: 100vh;
+  position: fixed;
   top: 100%;
   left: 0;
-  background: white;
+  top:0;
+  background: var(--background);
+  z-index:20;
+  padding: 2rem;
 }
-.link {
+.nav-link{
+  margin: 2rem 0;
+}
+.nav-link a {
   color: black;
   font-weight: 600;
-}
-.link {
   text-decoration: none;
+}
+.nav-link a:hover{
+  color: var(--pink);
 }
 .header-text {
   text-align: center;
@@ -170,7 +182,7 @@ main {
   color: var(--violet);
 }
 .section-header .sub-heading {
-  margin-bottom: 0rem;
+  margin-bottom: 1rem;
 }
 .section-body p,
 .section-body li {
@@ -209,6 +221,30 @@ footer {
 footer .bg {
   z-index: -1;
 }
+.socials a{
+  color: white;
+  margin: 0.8rem;
+  font-size: 1.3rem;
+}
+.socials a:hover{
+  color: var(--pink)
+}
+.cordinator{
+  width: 250px;
+  padding: 2rem;
+  border-radius: 5px;
+  margin: 1rem auto;
+}
+.name{
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.bg-yellow{
+  background-color: var(--yellow);
+}
+.bg-violet{
+  background-color: var(--violet);
+}
 
 @media screen and (min-width: 600px) {
   .date {
@@ -232,19 +268,25 @@ footer .bg {
   .hide-sm {
     display: block;
   }
+  .hide-lg{
+    display: none;
+  }
   .secondary-nav {
     background: transparent;
     position: relative;
     width: initial;
+    z-index: 1;
+    height: initial;
+    padding: 0;
   }
   .secondary-nav ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
   }
-  .link {
+  .nav-link a {
     color: white;
-    margin: 0 2rem;
+    margin: 0 0.6rem;
   }
   .heading {
     font-size: 3rem;
@@ -258,11 +300,17 @@ footer .bg {
   .count-down > * {
     margin: 0 1rem;
   }
+  .codinators{
+    display: flex;
+  }
 }
 
 @media screen and (min-width: 1020px) {
   .header-text {
     padding: 6rem 0;
+  }
+  .nav-link a {
+    margin: 0 1.2rem;
   }
   .date {
     font-size: 2.2rem;
