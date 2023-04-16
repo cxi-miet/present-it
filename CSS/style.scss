@@ -1,9 +1,16 @@
-
+@import url("https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@500;600;900&display=swap");
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
+  }
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   html {
     scroll-behavior: smooth;
@@ -12,6 +19,7 @@
 body{
   width: 100vw;
   overflow: hidden;
+  padding:0 .5rem;
 }
 /* custom scroll bar */
 ::-webkit-scrollbar {
@@ -375,3 +383,7 @@ body{
 
 //   import wave css
 @import "timeline.scss";
+
+//   import topics css
+@import "topics.scss";
+
